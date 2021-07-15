@@ -1,5 +1,5 @@
 {
-  "name": "node-test",
+  "name": "xproj-track",
   "version": "0.0.1",
   "description": "node",
   "main": "bundle/main.bundle.js",
@@ -28,6 +28,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ZhangRuyi0528/webpack-demo1/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "homepage": "https://github.com/ZhangRuyi0528/webpack-demo1#readme",
   "dependencies": {

@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("ELEMENT"), require("jQuery"), require("Vue"), require("VueRouter"));
+		module.exports = factory(require("ELEMENT"), require("Vue"), require("VueRouter"));
 	else if(typeof define === 'function' && define.amd)
-		define(["ELEMENT", "jQuery", "Vue", "VueRouter"], factory);
+		define(["ELEMENT", "Vue", "VueRouter"], factory);
 	else if(typeof exports === 'object')
-		exports["Track_pack"] = factory(require("ELEMENT"), require("jQuery"), require("Vue"), require("VueRouter"));
+		exports["Track_pack"] = factory(require("ELEMENT"), require("Vue"), require("VueRouter"));
 	else
-		root["Track_pack"] = factory(root["ELEMENT"], root["jQuery"], root["Vue"], root["VueRouter"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE_element_ui__, __WEBPACK_EXTERNAL_MODULE_jquery__, __WEBPACK_EXTERNAL_MODULE_vue__, __WEBPACK_EXTERNAL_MODULE_vue_router__) {
+		root["Track_pack"] = factory(root["ELEMENT"], root["Vue"], root["VueRouter"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_element_ui__, __WEBPACK_EXTERNAL_MODULE_vue__, __WEBPACK_EXTERNAL_MODULE_vue_router__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -138,7 +138,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!./r
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/source/mapDialog */ \"./src/components/source/mapDialog.js\");\n/* harmony import */ var _components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/source/mapBtns */ \"./src/components/source/mapBtns.js\");\n/* harmony import */ var _components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n\n// import BMap from '../components/source/map';\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    name: 'child-map',\n    data() {\n        return {\n            radio: '1',\n            amapID: 'my-map-dialog',\n            ak: 'cMURp5Iy4EFGdGslu4VofGsVUj6zyZ2j',\n            amap: '9503ac1b7b31db3b87621a3151b71671',\n            btns: _components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1__[\"mapBtns\"],\n            xMap: '',\n            trafficLayer: '',\n            showTrafficLayer: true\n        };\n    },\n\n    mounted() {\n        Promise.resolve(_components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0___default()()).then(() => {\n            setTimeout(() => {\n                if (window.AMap) {\n                    this.xMap = new AMap.Map('my-map-dialog', {\n                        resizeEnable: true,\n                        zoom: 11,\n                        // center: [116.397428, 39.90923],//中心点坐标\n                        viewMode: '3D' //使用3D视图\n                    });\n\n                    this.trafficLayer = new AMap.TileLayer.Traffic({\n                        zIndex: 10\n                    });\n\n                    this.xMap.add(this.trafficLayer);\n                }\n            }, 1000);\n        });\n    },\n\n    watch: {\n        showTrafficLayer(val) {\n            val ? this.trafficLayer.show() : this.trafficLayer.hide();\n        }\n    },\n\n    created() {},\n    methods: {\n        toggle(btn) {\n            console.log(btn);\n            switch (btn.id) {\n                case 'trafficLayer':\n                    this.showTrafficLayer = !this.showTrafficLayer;\n                    break;\n                default:\n                    break;\n            }\n        }\n\n    }\n});\n\n//# sourceURL=webpack://Track_pack/./src/childPgs/Map.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/source/mapDialog */ \"./src/components/source/mapDialog.js\");\n/* harmony import */ var _components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/source/mapBtns */ \"./src/components/source/mapBtns.js\");\n/* harmony import */ var _components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n\nconst AMap = window.AMap;\n// import BMap from '../components/source/map';\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    name: 'child-map',\n    data() {\n        return {\n            radio: '1',\n            amapID: 'my-map-dialog',\n            ak: 'cMURp5Iy4EFGdGslu4VofGsVUj6zyZ2j',\n            amap: '9503ac1b7b31db3b87621a3151b71671',\n            btns: _components_source_mapBtns__WEBPACK_IMPORTED_MODULE_1__[\"mapBtns\"],\n            xMap: '',\n            trafficLayer: '',\n            showTrafficLayer: true\n        };\n    },\n\n    mounted() {\n        Promise.resolve(_components_source_mapDialog__WEBPACK_IMPORTED_MODULE_0___default()()).then(() => {\n            setTimeout(() => {\n                if (AMap) {\n                    this.xMap = new AMap.Map('my-map-dialog', {\n                        resizeEnable: true,\n                        zoom: 11,\n                        // center: [116.397428, 39.90923],//中心点坐标\n                        viewMode: '3D' //使用3D视图\n                    });\n\n                    this.trafficLayer = new AMap.TileLayer.Traffic({\n                        zIndex: 10\n                    });\n\n                    this.xMap.add(this.trafficLayer);\n                }\n            }, 1000);\n        });\n    },\n\n    watch: {\n        showTrafficLayer(val) {\n            val ? this.trafficLayer.show() : this.trafficLayer.hide();\n        }\n    },\n\n    created() {},\n    methods: {\n        toggle(btn) {\n            console.log(btn);\n            switch (btn.id) {\n                case 'trafficLayer':\n                    this.showTrafficLayer = !this.showTrafficLayer;\n                    break;\n                default:\n                    break;\n            }\n        }\n\n    }\n});\n\n//# sourceURL=webpack://Track_pack/./src/childPgs/Map.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0");
 
 /***/ }),
 
@@ -234,7 +234,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"jquery\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    name: 'page3',\n    data() {\n        return {};\n    },\n    pops: [],\n    components: {},\n    created() {},\n    methods: {\n        aa() {\n            return () => {\n                console.log(2222);\n            };\n        }\n    },\n    mounted() {}\n});\n\n//# sourceURL=webpack://Track_pack/./src/pages/page3.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0");
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n// import $ from 'jquery';\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    name: 'page3',\n    data() {\n        return {};\n    },\n    pops: [],\n    components: {},\n    created() {},\n    methods: {\n        aa() {\n            return () => {\n                console.log(2222);\n            };\n        }\n    },\n    mounted() {}\n});\n\n//# sourceURL=webpack://Track_pack/./src/pages/page3.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0");
 
 /***/ }),
 
@@ -857,17 +857,6 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports) {
 
 eval("module.exports = __WEBPACK_EXTERNAL_MODULE_element_ui__;\n\n//# sourceURL=webpack://Track_pack/external_%22ELEMENT%22?");
-
-/***/ }),
-
-/***/ "jquery":
-/*!*************************!*\
-  !*** external "jQuery" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = __WEBPACK_EXTERNAL_MODULE_jquery__;\n\n//# sourceURL=webpack://Track_pack/external_%22jQuery%22?");
 
 /***/ }),
 
